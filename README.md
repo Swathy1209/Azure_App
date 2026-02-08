@@ -37,7 +37,7 @@ Server: Flask development server
 
 ⚙️ Installation & Setup
 1️⃣ Clone the Repository
-git clone https://github.com/your-username/flask-user-management.git
+git clone https://github.com/Swathy1209/Azure_App.git
 cd flask-user-management
 
 2️⃣ Create Virtual Environment (Optional but Recommended)
