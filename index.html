@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Azure SQLite CRUD App</title>
+</head>
+<body>
+<h2>CRUD Application (SQLite on Azure)</h2>
+
+<form action="/add" method="post">
+    Name: <input type="text" name="name" required>
+    Email: <input type="email" name="email" required>
+    Age: <input type="number" name="age" required>
+    <button type="submit">Add</button>
+</form>
+
+<br>
+
+<table border="1">
+<tr>
+<th>ID</th><th>Name</th><th>Email</th><th>Age</th><th>Actions</th>
+</tr>
+
+{% for user in users %}
+<tr>
+<form action="/update/{{user[0]}}" method="post">
+<td>{{user[0]}}</td>
+<td><input type="text" name="name" value="{{user[1]}}"></td>
+<td><input type="email" name="email" value="{{user[2]}}"></td>
+<td><input type="number" name="age" value="{{user[3]}}"></td>
+<td>
+<button type="submit">Update</button>
+<a href="/delete/{{user[0]}}">Delete</a>
+</td>
+</form>
+</tr>
+{% endfor %}
+</table>
+
+</body>
+</html>
